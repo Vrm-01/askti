@@ -83,13 +83,12 @@
     }
     
     .hero {
-      position: relative;
-      margin-top: 80px;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-    }
-    
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 80px);
+  overflow: hidden;
+  margin-top: 80px;
+}
     .hero img {
       width: 100%;
       height: 100%;
@@ -167,42 +166,67 @@
     
     .grade-produtos {
   display: grid;
-  grid-template-columns: repeat(6, 1fr); /* 6 por linha */
-  gap: 50px; /* mais espaço entre os produtos */
+  grid-template-columns: repeat(6, 1fr);
+  gap: 50px;
   justify-items: center;
-  max-width: 1800px; /* mais espaço total */
+  max-width: 1800px;
   margin: 0 auto;
   padding: 60px 20px;
 }
 
+/* Produto individual */
 .produto {
-  width: 250px; /* maior largura */
+  width: 250px;
   background-color: #f4f4f4;
   border-radius: 12px;
   padding: 20px;
   text-align: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.produto:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .produto img {
   width: 100%;
-  height: 260px; /* aumentei a altura */
+  height: 260px;
   object-fit: cover;
   border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+.produto-imagem {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
-.produto h4 {
-  font-size: 1.2em;
-  margin: 15px 0 5px;
-  color: #222;
+.produto-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  transition: opacity 0.4s ease;
 }
 
-.produto p {
-  font-size: 1em;
-  color: #555;
-  margin-bottom: 15px;
+.produto-imagem .verso {
+  opacity: 0;
 }
+
+.produto-imagem:hover .frente {
+  opacity: 0;
+}
+
+.produto-imagem:hover .verso {
+  opacity: 1;
+}
+
+/* Responsivo para tablets */
 @media (max-width: 1024px) {
   .grade-produtos {
     grid-template-columns: repeat(3, 1fr);
@@ -216,6 +240,36 @@
   .produto img {
     height: 230px;
   }
+}
+.imagem-produto {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.imagem-produto img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.4s ease;
+  border-radius: 10px;
+}
+
+.img-verso {
+  opacity: 0;
+}
+
+.produto:hover .img-frente {
+  opacity: 0;
+}
+
+.produto:hover .img-verso {
+  opacity: 1;
 }
 
 /* Responsivo para celular */
@@ -234,6 +288,7 @@
     height: 200px;
   }
 }
+
     </style>
 </head>
 <body>
@@ -274,69 +329,73 @@
     <h3 style="text-align: center; font-size: 2em; margin-top: 40px;" class="animar">Camisetas</h3>
     <div class="grade-produtos">
   
-      <!-- Camiseta Branca -->
       <div class="produto">
-        <a href="Camisetas/camiseta-branca.html" style="text-decoration: none; color: inherit;">
-          <div class="animar">
-            <img src="https://img.freepik.com/fotos-gratis/mulher-vestindo-camisa-em-branco_23-2149347516.jpg?w=740" alt="Camiseta Branca">
-            <h4>Camiseta Branca</h4>
-            <p>R$ 79,90</p>
+        <a href="Camisetas/camiseta-martin.html" style="text-decoration: none; color: inherit;">
+          <div class="imagem-produto animar">
+            <img src="https://static.cdnlive.com.br/uploads/556/unidade/17443111519649_detalhe.jpg" alt="Camiseta Frente" class="img-frente">
+            <img src="https://static.cdnlive.com.br/uploads/556/unidade/17443111514617_detalhe.jpg" alt="Camiseta Verso" class="img-verso">
           </div>
+          <h4>Camiseta Martin</h4>
+          <p>R$ 79,90</p>
         </a>
       </div>
   
-      <!-- Camiseta Preta -->
+     
       <div class="produto">
-        <a href="Camisetas/camiseta-preta.html" style="text-decoration: none; color: inherit;">
-          <div class="animar">
-            <img src="https://img.freepik.com/fotos-gratis/mulher-vestindo-camisa-em-branco_23-2149347516.jpg?w=740" alt="Camiseta Preta">
-            <h4>Camiseta Preta</h4>
-            <p>R$ 89,90</p>
+        <a href="Camisetas/camiseta-Lixomania.html" style="text-decoration: none; color: inherit;">
+          <div class="imagem-produto animar">
+            <img src="https://static.cdnlive.com.br/uploads/556/unidade/17314124299634_detalhe.jpg" alt="Camiseta Frente" class="img-frente">
+            <img src="https://static.cdnlive.com.br/uploads/556/produto/17314124287066_detalhe.jpg" alt="Camiseta Verso" class="img-verso">
           </div>
+          <h4>Camiseta Lixomania </h4>
+          <p>R$ 79,90</p>
         </a>
       </div>
   
-      <!-- Camiseta Estampada -->
-      <div class="produto">
-        <a href="Camisetas/camiseta-estampada.html" style="text-decoration: none; color: inherit;">
-          <div class="animar">
-            <img src="https://img.freepik.com/fotos-gratis/mulher-vestindo-camisa-em-branco_23-2149347516.jpg?w=740" alt="Camiseta Estampada">
-            <h4>Camiseta Estampada</h4>
-            <p>R$ 99,90</p>
+     
+      <div class="produto animar">
+        <a href="Camisetas/camiseta-mandela.html" style="text-decoration: none; color: inherit;">
+          <div class="imagem-produto">
+            <img src="https://s.chronic.com.br/product/2025/04/100918026-5.jpg" alt="Camiseta Estampada" class="img-frente">
+            <img src="https://s.chronic.com.br/product/2025/04/100918026-6.jpg" alt="Camiseta Estampada - Verso" class="img-verso">
           </div>
+          <h4>Camiseta Mandela</h4>
+          <p>R$ 99,90</p>
         </a>
       </div>
   
-      <!-- Camiseta Oversized -->
       <div class="produto">
-        <a href="Camisetas/camiseta-oversized.html" style="text-decoration: none; color: inherit;">
-          <div class="animar">
-            <img src="https://img.freepik.com/fotos-gratis/mulher-vestindo-camisa-em-branco_23-2149347516.jpg?w=740" alt="Camiseta Oversized">
-            <h4>Camiseta Oversized</h4>
-            <p>R$ 109,90</p>
+        <a href="Camisetas/camiseta-Infra.html" style="text-decoration: none; color: inherit;">
+          <div class="imagem-produto animar">
+            <img src="https://static.cdnlive.com.br/uploads/556/unidade/17377267159589_detalhe.jpg" alt="Camiseta Frente" class="img-frente">
+            <img src="https://static.cdnlive.com.br/uploads/556/unidade/17377267149052_detalhe.jpg" alt="Camiseta Verso" class="img-verso">
           </div>
+          <h4>Camiseta Infra</h4>
+          <p>R$ 89,90</p>
         </a>
       </div>
   
-      <!-- Camiseta Colorida -->
+    
       <div class="produto">
-        <a href="Camisetas/camiseta-colorida.html" style="text-decoration: none; color: inherit;">
-          <div class="animar">
-            <img src="https://img.freepik.com/fotos-gratis/mulher-vestindo-camisa-em-branco_23-2149347516.jpg?w=740" alt="Camiseta Colorida">
-            <h4>Camiseta Colorida</h4>
-            <p>R$ 94,90</p>
+        <a href="Camisetas/camiseta-tigers.html" style="text-decoration: none; color: inherit;">
+          <div class="imagem-produto animar">
+            <img src="https://static.cdnlive.com.br/uploads/556/unidade/17419608459740_detalhe.jpg" alt="Camiseta Frente" class="img-frente">
+            <img src="https://static.cdnlive.com.br/uploads/556/unidade/17419608468972_detalhe.jpg" alt="Camiseta Verso" class="img-verso">
           </div>
+          <h4>Camiseta Tigers</h4>
+          <p>R$ 89,90</p>
         </a>
       </div>
   
-      <!-- Camiseta Verde -->
+   
       <div class="produto">
-        <a href="Camisetas/camiseta-verde.html" style="text-decoration: none; color: inherit;">
-          <div class="animar">
-            <img src="https://img.freepik.com/fotos-gratis/mulher-vestindo-camisa-em-branco_23-2149347516.jpg?w=740" alt="Camiseta Verde">
-            <h4>Camiseta Verde</h4>
-            <p>R$ 84,90</p>
+        <a href="Camisetas/camiseta-hijab.html" style="text-decoration: none; color: inherit;">
+          <div class="imagem-produto animar">
+            <img src="https://static.cdnlive.com.br/uploads/556/unidade/17446459447083_detalhe.jpg" alt="Camiseta Frente" class="img-frente">
+            <img src="https://static.cdnlive.com.br/uploads/556/unidade/17446459446660_detalhe.jpg" alt="Camiseta Verso" class="img-verso">
           </div>
+          <h4>Camiseta Hijab</h4>
+          <p>R$ 79,90</p>
         </a>
       </div>
   
