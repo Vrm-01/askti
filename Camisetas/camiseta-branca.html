@@ -2,7 +2,6 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Camiseta Branca | Askti</title>
   <style>
     body {
@@ -67,15 +66,14 @@
     }
 
     .produto-detalhe img {
-      width: 100%;
-      max-width: 500px;
+      width: 150%;
+      max-width: 1100px;
       border-radius: 10px;
       object-fit: cover;
     }
 
     .info {
       flex: 1;
-      min-width: 280px;
     }
 
     .info h2 {
@@ -125,6 +123,14 @@
     .voltar:hover {
       background: #333;
       color: white;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .produto-detalhe {
+        flex-direction: column;
+        text-align: center;
+      }
     }
 
     select#tamanho {
@@ -146,39 +152,45 @@
       border-color: #999;
       background-color: #f0f0f0;
     }
-
     @media (max-width: 768px) {
-      .produto-detalhe {
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
-      }
+  .produto-detalhe {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
 
-      .produto-detalhe img {
-        max-width: 100%;
-        height: auto;
-      }
+  .produto-detalhe img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
 
-      .info h2 {
-        font-size: 1.6em;
-      }
+  .info {
+    width: 100%;
+  }
 
-      .info p, .preco {
-        font-size: 1em;
-      }
+  .botao-comprar, .voltar {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
 
-      .botao-comprar, .voltar {
-        width: 100%;
-        max-width: 300px;
-      }
-    }
+  .info h2 {
+    font-size: 1.6em;
+  }
+
+  .info p, .preco {
+    font-size: 1em;
+  }
+}
+
   </style>
 </head>
 <body>
   <!-- MENU -->
   <header>
     <div class="container">
-      <a href="../index.html" style="text-decoration: none;"><h1>Askti</h1></a>
+      <a href="../Camisetas/camiseta-branca.html" id="btn-topo" style="text-decoration: none;"><h1>Askti</h1></a>
       <nav>
         <ul>
           <li><a href="../index.html#inicio">Início</a></li>
@@ -197,7 +209,7 @@
       <p>Feita com algodão premium 100% orgânico, modelagem confortável e tecido respirável. Ideal para o dia a dia com estilo minimalista.</p>
       <p class="preco">R$ 79,90</p>
 
-      <label for="tamanho">Escolha o tamanho:</label><br>
+      <label for="tamanho" style="font-weight: 500; display: block; margin-bottom: 8px;">Escolha o tamanho:</label>
       <select id="tamanho">
         <option value="P">P</option>
         <option value="M">M</option>
@@ -206,7 +218,8 @@
       </select>
 
       <br><br>
-      <button class="botao-comprar" onclick="enviarWhatsApp()">Comprar agora</button><br>
+      <button class="botao-comprar" onclick="enviarWhatsApp()">Comprar agora</button>
+      <br>
       <a class="voltar" href="../index.html#produtos">← Voltar para Coleção</a>
     </div>
   </section>
