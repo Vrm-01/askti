@@ -253,8 +253,7 @@
   <script>
     function enviarWhatsApp() {
       const tamanho = document.getElementById("tamanho").value;
-      const imagem = "https://static.cdnlive.com.br/uploads/556/unidade/17446459446660_detalhe.jpg";
-      const mensagem = `Olá! Eu gostaria de comprar a camiseta hijab no tamanho ${tamanho}.\n\nImagem do produto: ${imagem}`;
+      const mensagem = `Olá! Eu gostaria de comprar a camiseta Hijab no tamanho ${tamanho}.`;
       const numero = "554598283297";
       const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
       window.open(url, "_blank");
