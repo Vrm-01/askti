@@ -246,7 +246,7 @@
     <div class="info">
       <h2>Camiseta Mandela</h2>
       <p>Feita com algodão sustentável e pigmento natural preto, traz conforto e um toque de frescor ao seu visual.</p>
-      <p class="preco">R$ 89,90</p>
+      <p class="preco">R$ 180,00</p>
   
       <label for="tamanho">Escolha o tamanho:</label>
       <select id="tamanho">
@@ -267,7 +267,6 @@
   <script>
     function enviarWhatsApp() {
       const tamanho = document.getElementById("tamanho").value;
-      const imagem = "https://img.freepik.com/fotos-gratis/mulher-vestindo-camisa-em-branco_23-2149347516.jpg?w=740";
       const mensagem = `Olá! Eu gostaria de comprar a camiseta estampada no tamanho ${tamanho}.\n\nImagem do produto: ${imagem}`;
       const numero = "554598283297";
       const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;

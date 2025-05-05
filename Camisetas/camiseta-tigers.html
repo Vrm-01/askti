@@ -231,14 +231,14 @@
 
   <section class="produto-detalhe">
     <div class="imagem-hover">
-      <img class="frente" src="https://static.cdnlive.com.br/uploads/556/unidade/17419608459740_detalhe.jpg" alt="Frente da Camiseta Verde">
-      <img class="verso" src="https://static.cdnlive.com.br/uploads/556/unidade/17419608468972_detalhe.jpg" alt="Verso da Camiseta Verde">
+      <img class="frente" src="https://static.cdnlive.com.br/uploads/556/unidade/17419608459740_detalhe.jpg" alt="Frente da Camiseta ">
+      <img class="verso" src="https://static.cdnlive.com.br/uploads/556/unidade/17419608468972_detalhe.jpg" alt="Verso da Camiseta ">
     </div>
   
     <div class="info">
       <h2>Camiseta Tigers</h2>
       <p>Feita com algodão sustentável e pigmento natural preto, traz conforto e um toque de frescor ao seu visual.</p>
-      <p class="preco">R$ 89,90</p>
+      <p class="preco">R$ 180,00</p>
   
       <label for="tamanho">Escolha o tamanho:</label>
       <select id="tamanho">
@@ -255,11 +255,9 @@
     </div>
   </section>
   
-
   <script>
     function enviarWhatsApp() {
       const tamanho = document.getElementById("tamanho").value;
-      const imagem = "https://img.freepik.com/fotos-gratis/mulher-vestindo-camisa-em-branco_23-2149347516.jpg?w=740";
       const mensagem = `Olá! Eu gostaria de comprar a camiseta colorida no tamanho ${tamanho}.\n\nImagem do produto: ${imagem}`;
       const numero = "554598283297";
       const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
