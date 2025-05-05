@@ -260,7 +260,7 @@
       const tamanho = document.getElementById("tamanho").value;
       const mensagem = `Olá! Eu gostaria de comprar a camiseta Tyson no tamanho ${tamanho}.\n\nImagem do produto: ${imagem}`;
       const numero = "554598283297";
-      const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+      const url = `https://wa.me/554598283297${numero}?text=${encodeURIComponent(mensagem)}`;
       window.open(url, "_blank");
     }
   </script>
